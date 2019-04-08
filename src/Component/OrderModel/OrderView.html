@@ -1,0 +1,13 @@
+<div>
+	<div ng-repeat="items in order" class="row mb-4 jumbotron">
+		<div class="col-8">
+			<div ng-repeat="item in items.items" class="mb-2">
+				<div>{{item.product}} - "{{item.name}}"<br> price - {{item.price}}$</div>
+			</div>
+		</div>
+		<div class="col-4">
+			<div>Order from {{items.createdAt |date:"dd.MM.yyyy"}}</div>
+			<div>Total acquisition - {{items.orderCost | currency}}</div>
+		</div>
+	</div>
+</div>

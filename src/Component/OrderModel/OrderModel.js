@@ -1,0 +1,1 @@
+export default ['orderCtrl', ($scope) => {}];

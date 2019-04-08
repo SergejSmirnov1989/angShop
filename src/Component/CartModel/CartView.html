@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="row col-8 align-items-stretch">
+		<div
+				ng-repeat="item in product | filter : myFilter"
+				class="col-4 p-1"
+				ng-class="isLast($last)">
+			<div class="card h-100">
+				<img
+						src={{item.img}}
+						alt="some"
+						class="card-img-top img-thumbnail">
+				<div class="card-body text-center d-flex flex-column">
+					<h3 class="card-title">
+						{{item.product}}
+					</h3>
+					<div class="card-text mb-3">
+						{{item.name}}
+					</div>
+					<h3 class="card-text float-right mt-auto">
+						{{item.price | currency}}
+					</h3>
+					<button
+							class="btn btn-primary float-left"
+							ng-click="removeFromCart(item.id)"
+					>
+						{{'remove from cart'}}
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-4 text-center">
+		<p class="text-center">Saving orders {{getOrderLength()}}</p>
+		<button class="btn btn-primary" ng-click="saveOrder()">save order</button>
+		<button class="btn btn-primary" ng-click="cleanOrder()">clean orders</button>
+	</div>
+</div>

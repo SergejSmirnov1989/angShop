@@ -1,0 +1,30 @@
+<div class="row">
+	<div
+			ng-repeat="item in product"
+			class="col-4 p-1"
+			ng-class="isLast($last)">
+		<div class="card">
+			<img
+					src={{item.img}}
+					alt="some"
+					class="card-img-top img-thumbnail">
+			<div class="card-body text-center">
+				<h3 class="card-title">
+					{{item.product}}
+				</h3>
+				<div class="card-text mb-3">
+					{{item.name}}
+				</div>
+				<h3 class="card-text float-right">
+					{{item.price | currency}}
+				</h3>
+				<button
+						class="btn btn-primary float-left"
+						ng-click="addToCart(item.id)"
+				>
+					{{cart.indexOf(item.id) === -1 ? 'Add to cart' : 'Remove from cart'}}
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
